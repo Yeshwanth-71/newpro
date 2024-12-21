@@ -28,7 +28,7 @@ function MobDet() {
                     </div>
                 </Col>
                 <Col md={6}>
-                    <img src={item.image1} alt={item.title} height="500px" style={{ borderRadius: "8px" }} />
+                    <img src={item.image1} alt={item.title} height="auto" width="100%" style={{ borderRadius: "8px" }} />
                 </Col>
             </Row><br /><br />
 
