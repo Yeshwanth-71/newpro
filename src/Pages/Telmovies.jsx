@@ -5,24 +5,24 @@ import { Link } from 'react-router-dom';
 
 function Mobile() {
     const [currentPage, setCurrentPage] = useState(1);
-    const moviesPerPage = 5; // Number of movies per page
+    const moviesPerPage = 5;
 
-    // Calculate total pages
+   
     const totalPages = Math.ceil(Telugu.length / moviesPerPage);
 
-    // Get movies for the current page
+    
     const indexOfLastMovie = currentPage * moviesPerPage;
     const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
     const currentMovies = Telugu.slice(indexOfFirstMovie, indexOfLastMovie);
 
-    // Handler for navigating to the next page
+    
     const handleNextPage = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
         }
     };
 
-    // Handler for navigating to the previous page
+   
     const handlePreviousPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);

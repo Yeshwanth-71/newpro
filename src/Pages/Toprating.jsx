@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 
 function TopRating() {
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 5; // Number of movies per page
+  const moviesPerPage = 5; 
 
-  // Filter and sort the movies
+  
   const topRatedTeluguMovies = Telugu.filter((item) => item.rating >= 4.5).sort((a, b) => b.rating - a.rating);
 
-  // Calculate total pages
+  
   const totalPages = Math.ceil(topRatedTeluguMovies.length / moviesPerPage);
 
-  // Get movies for the current page
+  
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
   const currentMovies = topRatedTeluguMovies.slice(indexOfFirstMovie, indexOfLastMovie);
 
-  // Handlers for navigation
+  
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };

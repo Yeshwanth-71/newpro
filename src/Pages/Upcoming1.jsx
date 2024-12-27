@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Upcoming } from "../Data/Upcoming"; // Import the movie data
+import { Upcoming } from "../Data/Upcoming"; 
 import Header from "../Components/Header";
 
 function UpcomingPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const moviesPerPage = 5; // Number of movies per page
-
-  // Calculate total pages
+  const moviesPerPage = 5; 
+  
   const totalPages = Math.ceil(Upcoming.length / moviesPerPage);
 
-  // Get movies for the current page
+ 
   const indexOfLastMovie = currentPage * moviesPerPage;
   const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
   const currentMovies = Upcoming.slice(indexOfFirstMovie, indexOfLastMovie);
 
-  // Handlers for navigation
+  
   const handleNextPage = () => {
     if (currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
